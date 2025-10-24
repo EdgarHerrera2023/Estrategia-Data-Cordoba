@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategia Data Córdoba - Consultoría en Ciencia de Datos</title>
+    <style>
+        /* --- Reset y Estilos Globales --- */
+        :root {
+            --color-primario: #004a99; /* Azul oscuro */
+            --color-secundario: #007bff; /* Azul brillante */
+            --color-fondo: #f4f7f6;
+            --color-texto: #333;
+            --color-blanco: #ffffff;
+            --sombra-tarjeta: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--color-primario);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 2.2rem; }
+        h3 { font-size: 1.5rem; }
+        p { margin-bottom: 15px; }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* --- Encabezado y Navegación --- */
+        .header {
+            background-color: var(--color-blanco);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--color-secundario);
+            text-align: center;
+            box-shadow: var(--sombra-tarjeta);
+        }
+
+        .header h1 {
+            color: var(--color-primario);
+            margin: 0;
+        }
+
+        /* --- Sección de Servicios --- */
+        .service-grid {
+            padding: 40px 0;
+        }
+
+        .service-card {
+            display: flex;
+            background-color: var(--color-blanco);
+            border-radius: 10px;
+            box-shadow: var(--sombra-tarjeta);
+            margin-bottom: 40px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .service-content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .service-image {
+            flex: 1;
+            min-height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Alternar orden de imagen y texto */
+        .service-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .service-card ul li, .service-card ol li {
+            margin-bottom: 8px;
+        }
+
+        .service-card ol {
+            list-style-type: decimal;
+            font-weight: bold;
+        }
+        .service-card ol li {
+            margin-bottom: 10px;
+        }
+        .service-card ol li span {
+            font-weight: normal;
+        }
+
+        /* --- Sección de Testimonios --- */
+        .testimonials {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            color: var(--color-blanco);
+            margin-bottom: 30px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--color-secundario);
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .testimonial-card p {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card .rating {
+            font-weight: bold;
+            color: #ffd700; /* Color dorado para las estrellas */
+            font-size: 1rem;
+        }
+
+        /* --- Pie de Página --- */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #333;
+            color: var(--color-blanco);
+            margin-top: 30px;
+        }
+
+        /* --- Responsividad --- */
+        @media (max-width: 900px) {
+            .service-card,
+            .service-card:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .service-image {
+                flex: auto;
+                height: 250px; /* Altura fija para imagen en móvil */
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>Estrategia Data Córdoba</h1>
+        </div>
+    </header>
+
+    <main class="container service-grid">
+
+        <section class="service-card">
+            <div class="service-content">
+                <h2>1. Consultoría en Ciencia de Datos Empresarial</h2>
+                <h3>Proyectos de Data Science en el Mundo Empresarial:</h3>
+                <p>Ayudamos a entender y aplicar metodologías efectivas para llevar a cabo proyectos de ciencia de datos en entornos empresariales.</p>
+                <h3>Desarrollo de Componentes Esenciales:</h3>
+                <p>Nos especializamos en la implementación de los tres pilares cruciales:</p>
+                <ul>
+                    <li>Business Analytics</li>
+                    <li>Machine Learning</li>
+                    <li>Productivización</li>
+                </ul>
+            </div>
+            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');">
+                </div>
+        </section>
+
+        <section class="service-card">
+            <div class="service-content">
+                <h2>2. Desarrollo de Proyectos de Business Analytics</h2>
+                <h3>Calidad de Datos y Análisis de Nulos:</h3>
+                <p>Identificamos y corregimos errores, asegurando la calidad de los datos.</p>
+                <h3>Análisis Exploratorio y Framework Efectivo:</h3>
+                <p>Realizamos análisis detallados de variables y aplicamos un marco efectivo de Business Analytics.</p>
+                <ol>
+                    <li><span><strong>Paso 1:</strong> Cuantificación del problema</span></li>
+                    <li><span><strong>Paso 2:</strong> Impacto económico</span></li>
+                    <li><span><strong>Paso 3:</strong> Escenarios de ahorro</span></li>
+                </ol>
+                <h3>Generación de Valor Empresarial:</h3>
+                <p>Demostramos cómo el análisis de datos puede generar valor práctico para la empresa.</p>
+            </div>
+            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');">
+                </div>
+        </section>
+
+        <section class="service-card">
+            <div class="service-content">
+                <h2>3. Implementación de Proyectos de Machine Learning</h2>
+                <h3>Modelos Predictivos Personalizados:</h3>
+                <p>Desarrollamos sistemas automáticos basados en algoritmos de machine learning. Por ejemplo, calculamos la probabilidad de que cada empleado abandone la empresa.</p>
+                <h3>Entrenamiento y Producción:</h3>
+                <p>Guíamos a través de las fases de entrenamiento y puesta en producción, asegurando la efectividad continua del modelo.</p>
+                <h3>Aplicaciones Versátiles:</h3>
+                <p>Extremamos el aprendizaje para casos diversos como propensión a compra, scoring de riesgos, mantenimiento preventivo, identificación de fraude, etc.</p>
+            </div>
+            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1639762681057-408e52192e40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80');">
+                </div>
+        </section>
+
+        <section class="service-card">
+            <div class="service-content">
+                <h2>4. Productivización y Desarrollo de Dashboards</h2>
+                <h3>Alternativas para Productivizar Proyectos:</h3>
+                <p>Exploramos y aplicamos estrategias efectivas para la productivización de proyectos de ciencia de datos.</p>
+                <h3>Desarrollo de Dashboards Atractivos:</h3>
+                <p>Creamos dashboards visuales y atractivos que resumen el trabajo realizado y son fácilmente consumibles por la organización.</p>
+                <h3>Despliegue en Internet y Portafolio:</h3>
+                <p>Hacemos accesibles los dashboards en línea y te enseñamos a incorporarlos en tu portafolio profesional.</p>
+            </div>
+            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');">
+                </div>
+        </section>
+
+    </main>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Motivos por los que te gustaremos</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>«Servicio excelente»</p>
+                    <span class="rating">Puntuación: 5 de 5</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>«Nos encanta la flexibilidad»</p>
+                    <span class="rating">Puntuación: 5 de 5</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>«Muy buena calidad»</p>
+                    <span class="rating">Puntuación: 4 de 5</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Estrategia Data Córdoba. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
