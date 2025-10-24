@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estrategia Data Córdoba - Consultoría en Ciencia de Datos</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         /* --- Reset y Estilos Globales --- */
         :root {
@@ -154,14 +157,100 @@
             font-size: 1rem;
         }
 
+        /* --- NUEVO: Sección de Contacto --- */
+        .contact-section {
+            padding: 50px 0;
+            background-color: var(--color-blanco);
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 25px;
+            background-color: var(--color-fondo);
+            border-radius: 10px;
+            box-shadow: var(--sombra-tarjeta);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--color-primario);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical; /* Permite al usuario redimensionar verticalmente */
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-secundario);
+            color: var(--color-blanco);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Botón de ancho completo */
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-primario);
+        }
+
         /* --- Pie de Página --- */
         .footer {
             text-align: center;
-            padding: 30px 0;
+            padding: 40px 0;
             background-color: #333;
             color: var(--color-blanco);
-            margin-top: 30px;
+            margin-top: 0; /* Ajustado por la nueva sección de contacto */
         }
+
+        /* --- NUEVO: Redes Sociales --- */
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: var(--color-blanco);
+            margin: 0 15px;
+            font-size: 1.8rem; /* Tamaño del icono */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--color-secundario); /* Resalta al pasar el mouse */
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
 
         /* --- Responsividad --- */
         @media (max-width: 900px) {
@@ -183,6 +272,14 @@
         @media (max-width: 600px) {
             h1 { font-size: 2.2rem; }
             h2 { font-size: 1.8rem; }
+
+            .testimonial-grid {
+                gap: 20px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
         }
 
     </style>
@@ -211,7 +308,7 @@
                 </ul>
             </div>
             <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');">
-                </div>
+            </div>
         </section>
 
         <section class="service-card">
@@ -230,7 +327,7 @@
                 <p>Demostramos cómo el análisis de datos puede generar valor práctico para la empresa.</p>
             </div>
             <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');">
-                </div>
+            </div>
         </section>
 
         <section class="service-card">
@@ -244,7 +341,7 @@
                 <p>Extremamos el aprendizaje para casos diversos como propensión a compra, scoring de riesgos, mantenimiento preventivo, identificación de fraude, etc.</p>
             </div>
             <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1639762681057-408e52192e40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80');">
-                </div>
+            </div>
         </section>
 
         <section class="service-card">
@@ -258,7 +355,7 @@
                 <p>Hacemos accesibles los dashboards en línea y te enseñamos a incorporarlos en tu portafolio profesional.</p>
             </div>
             <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');">
-                </div>
+            </div>
         </section>
 
     </main>
@@ -283,8 +380,38 @@
         </div>
     </section>
 
+    <section class="contact-section">
+        <div class="container">
+            <h2>Formulario de Contacto</h2>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+
     <footer class="footer">
         <div class="container">
+            
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
             <p>&copy; 2024 Estrategia Data Córdoba. Todos los derechos reservados.</p>
         </div>
     </footer>
